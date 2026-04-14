@@ -39,6 +39,8 @@ Seaborn
 ```bash
 pip install seaborn
 ```
+<img width="1058" height="986" alt="download" src="https://github.com/user-attachments/assets/ebd7b145-a0c1-412d-80ec-6bc741c84f68" />
+
 Sklearn (Train-test-split)
 ```bash
 from sklearn.model_selection import train_test_split
