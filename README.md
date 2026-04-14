@@ -73,6 +73,9 @@ Sklearn (Tree)
 ```bash
 from sklearn import tree
 ```
+<img width="794" height="790" alt="download (1)" src="https://github.com/user-attachments/assets/c917db47-854d-4c4f-8711-c863ce03d126" />
+
+
 Seaborn 
 ```bash
 import seaborn as sns
