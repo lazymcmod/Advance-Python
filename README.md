@@ -19,8 +19,9 @@ In this Jupyter Notebook we have all concept of Python
 18. Gradient Desecent
 19. EDA using Bivariate and Multivariate Analysis
 20. Pandas Profiling
-21. Encoding Categorical Dat
-22. 22. One Hot Encoding
+21. Encoding Categorical Data
+22. One Hot Encoding
+ 
 
 To Install Require Library
 Numpy
