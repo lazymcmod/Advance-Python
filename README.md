@@ -1,3 +1,5 @@
+You can use this to learn python from very basic
+
 In this Jupyter Notebook we have all concept of Python 
 1. Function
 2. Oops (Object Oriented Programming)
