@@ -1,4 +1,4 @@
-You can use this to learn python from very basic
+You can use this to learn python from very basic level
 
 In this Jupyter Notebook we have all concept of Python 
 1. Function
