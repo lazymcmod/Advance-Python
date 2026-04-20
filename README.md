@@ -234,7 +234,7 @@ def apply_transformer(transformer):
 2. ```bash
    apply_transformer(lambda x: X**3)
    ```
-   apply_transformer(lambda x: X**3)
+   Accuracy 0.6251685393258427
    <img width="1172" height="393" alt="9437e3c2-ab18-46df-b99c-39e1ec89b0ad" src="https://github.com/user-attachments/assets/9feb1855-1550-4bd1-843c-592ca02d4057" />
 
 3. ```bash
@@ -246,7 +246,7 @@ def apply_transformer(transformer):
 4. ```bash
    apply_transformer(lambda x: 1/(x+0.1))
    ```
-   apply_transformer(lambda x: 1/(x+0.1))
+   Accuracy 0.61729088639201
    <img width="1172" height="393" alt="5ee327cf-fbd8-4b7d-b614-cbe8273a5108" src="https://github.com/user-attachments/assets/f6e0567d-446f-45a7-9f11-fc256fffdfd7" />
 
    
