@@ -24,7 +24,8 @@ In this Jupyter Notebook we have all concept of Python
 21. Encoding Categorical Data
 22. One Hot Encoding
 23. Column Transformer in Machine Learning
-24. Machine Learning Pipelines A-Z
+24. Machine Learning Pipelines A-Z\
+25. Transformer
  
 
 To Install Require Library
