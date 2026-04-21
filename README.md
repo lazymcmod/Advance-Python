@@ -27,6 +27,7 @@ In this Jupyter Notebook we have all concept of Python
 24. Machine Learning Pipelines A-Z\
 25. Transformer
 26. Power Transformer
+27. Binning and Binarization
  
 
 To Install Require Library
@@ -384,9 +385,45 @@ for col in X_train_Transformed2.columns:
 <img width="1160" height="393" alt="b4d7bb29-feb7-439a-968f-fbde41f95bd0" src="https://github.com/user-attachments/assets/092c18ce-b7d8-49c4-af92-7eb4be4384ac" />
 <img width="1160" height="393" alt="f39328ab-4e0b-424f-8573-33d693efceee" src="https://github.com/user-attachments/assets/5bb81206-0f83-4ec7-9aa1-86f9eae7f719" />
 
+Discretize 
+```bash
+def discretize(bins,strategy):
+    kbin_age = KBinsDiscretizer(n_bins=bins,encode='ordinal',strategy=strategy)
+    kbin_fare = KBinsDiscretizer(n_bins=bins,encode='ordinal',strategy=strategy)
 
-   
+    trf = ColumnTransformer([
+        ('first',kbin_age,[0]),
+        ('second',kbin_fare,[1])
+    ])
 
+    X_trf = trf.fit_transform(X)
+    print(np.mean(cross_val_score(DecisionTreeClassifier(),X,y,cv=10,scoring='accuracy')))
+
+    plt.figure(figsize=(14,4))
+    plt.subplot(121)
+    plt.hist(X['Age'])
+    plt.title("Before")
+
+    plt.subplot(122)
+    plt.hist(X_trf[:,0],color='red')
+    plt.title("After")
+    
+    plt.show()
+```
+1. ```bash
+   discretize(10,'uniform')
+   ```
+   <img width="1141" height="374" alt="1d583733-96a0-4473-b8b3-cb2713072026" src="https://github.com/user-attachments/assets/625d8ccf-df39-4cd6-aa20-b0dca96b00f1" />
+     
+2. ```bash
+   discretize(10,'quantile')
+   ```
+   <img width="1141" height="374" alt="9b7d3be4-4ebc-4141-8bc4-0644596005a7" src="https://github.com/user-attachments/assets/0c3d8846-1439-4c60-9ee7-9256061e6581" />
+
+3. ```bash
+   discretize(10,'kmeans')
+   ```
+   <img width="1141" height="374" alt="7ff4f98a-a84d-4730-b636-86a4901c3289" src="https://github.com/user-attachments/assets/5c840ffc-75e6-4eb3-8f47-f48f4eadeebc" />
 
 
 
