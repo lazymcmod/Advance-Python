@@ -28,6 +28,7 @@ In this Jupyter Notebook we have all concept of Python
 25. Transformer
 26. Power Transformer
 27. Binning and Binarization
+28. Handling Mixed Variable
  
 
 To Install Require Library
