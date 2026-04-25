@@ -1,6 +1,6 @@
-You can use this to learn python from very basic level
+# You can use this to learn python from very basic level
 
-In this Jupyter Notebook we have all concept of Python 
+# In this Jupyter Notebook we have all concept of Python 
 1. Function
 2. Oops (Object Oriented Programming)
 3. Encapusulation
@@ -29,83 +29,83 @@ In this Jupyter Notebook we have all concept of Python
 26. Power Transformer
 27. Binning and Binarization
 28. Handling Mixed Variable
+29. Handling Date & Time Variable
  
-
-To Install Require Library
-Numpy
+# To Install Require Library
+# Numpy
 ```bash
 pip install Numpy
 ```
-Pandas
+# Pandas
 ```bash
 pip install Pandas
 ```
-Matplotlib
+# Matplotlib
 ```bash
 pip install matplotlib
 ```
-Sklearn
+# Sklearn
 ```bash
 pip install scikit-learn
 ```
-Seaborn
+# Seaborn
 ```bash
 pip install seaborn
 ```
 <img width="1058" height="986" alt="download" src="https://github.com/user-attachments/assets/ebd7b145-a0c1-412d-80ec-6bc741c84f68" />
 
-Sklearn (Train-test-split)
+# Sklearn (Train-test-split)
 ```bash
 from sklearn.model_selection import train_test_split
 ```
-Sklearn (Linear Regression)
+# Sklearn (Linear Regression)
 ```bash
 from sklearn.linear_model import LinearRegression
 ```
-Sklearn (Logistic Regression)
+# Sklearn (Logistic Regression)
 ```bash
 from sklearn.linear_model import LogisticRegression
 ```
-Sklearn (KNN)
+# Sklearn (KNN)
 ```bash
 from sklearn.neighbors import KNeighborsClassifier
 ```
-Sklearn (Decision Tree Classifier)
+# Sklearn (Decision Tree Classifier)
 ```bash
 from sklearn.tree import DecisionTreeClassifier
 ```
-Sklearn Metrics (accuracy_score, precision_score, recall_score, f1_score)
+# Sklearn Metrics (accuracy_score, precision_score, recall_score, f1_score)
 ```bash
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 ```
-Sklearn Metrics (Confusion Metrics)
+# Sklearn Metrics (Confusion Metrics)
 ```bash
 from sklearn.metrics import confusion_matrix
 ```
-Sklearn (Tree)
+# Sklearn (Tree)
 ```bash
 from sklearn import tree
 ```
 <img width="794" height="790" alt="download (1)" src="https://github.com/user-attachments/assets/c917db47-854d-4c4f-8711-c863ce03d126" />
 
 
-Seaborn 
+# Seaborn 
 ```bash
 import seaborn as sns
 ```
-Matplotlib
+# Matplotlib
 ```bash
 from matplotlib import pyplot as plt
 ```
-Pandas 
+# Pandas 
 ```bash
 import pandas as pd
 ```
-Numpy
+# Numpy
 ```bash
 import numpy as np
 ```
-All library need to add before doing Transformer
+# All library need to add before doing Transformer
 
 ```bash
 import pandas as pd
@@ -126,12 +126,12 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.preprocessing import FunctionTransformer
 from sklearn.compose import ColumnTransformer
 ```
-To add dataset
+# To add dataset
 
 ```bash
 df = pd.read_csv("Titanic-Dataset.csv",usecols=['Age', 'Fare', 'Survived'])
 ```
-Apply TrainTestSplit
+# Apply TrainTestSplit
 
 ```bash
 X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,random_state=42)
@@ -201,7 +201,7 @@ stats.probplot(X_train_Transformed['Fare'],dist="norm",plot=plt)
 ```
 <img width="1172" height="393" alt="b2808917-4ea0-4627-a7ef-44967ab710e0" src="https://github.com/user-attachments/assets/1968d847-7179-48f7-9372-93165c903366" />
 
-Apply Transformer
+# Apply Transformer
 
 ```bash
 def apply_transformer(transformer):
@@ -252,9 +252,9 @@ def apply_transformer(transformer):
    Accuracy 0.61729088639201
    <img width="1172" height="393" alt="5ee327cf-fbd8-4b7d-b614-cbe8273a5108" src="https://github.com/user-attachments/assets/f6e0567d-446f-45a7-9f11-fc256fffdfd7" />
 
-Power Transformer
+# Power Transformer
 
-Necessary Library
+# Necessary Library to import
 ```bash
 import pandas as pd
 import numpy as np
@@ -274,7 +274,7 @@ Import Dataset
 df = pd.read_csv("https://raw.githubusercontent.com/campusx-official/100-days-of-machine-learning/refs/heads/main/day31-power-transformer/concrete_data.csv")
 ```
 
-Apply Regression Without Any Transformer
+# Apply Regression Without Any Transformer
 ```bash
 lr = LinearRegression()
 
@@ -284,7 +284,7 @@ y_pred = lr.predict(X_test)
 
 r2_score(y_test,y_pred)
 ```
-plotting the distplot without any transformation
+# plotting the distplot without any transformation
 ```bash
 for col in X_train.columns:
     plt.figure(figsize=(14,4))
@@ -307,7 +307,7 @@ for col in X_train.columns:
 <img width="1160" height="393" alt="7d2cb43d-0868-4926-ac3b-e815feaf7a53" src="https://github.com/user-attachments/assets/9b05daaf-0478-4028-8a99-1eec3938a0d3" />
 <img width="1160" height="393" alt="db61c1c8-d02e-4945-8921-43f5c9c2e35b" src="https://github.com/user-attachments/assets/bc9e10fa-f0f0-4ace-bb4a-6119f9d0869d" />
 
- Apply Box-Cox Transform
+ # Apply Box-Cox Transform
  ```bash
 pt  =PowerTransformer(method='box-cox')
 
@@ -316,7 +316,7 @@ X_test_Transformed = pt.fit_transform(X_test+0.000001)
 
 pd.DataFrame({'cols':X_train.columns,'box_cox_lambda':pt.lambdas_})
 ```
-Apply Linear Regression on Transformed Data
+# Apply Linear Regression on Transformed Data
 ```bash
 lr = LinearRegression()
 lr.fit(X_train_Transformed,y_train)
@@ -324,7 +324,7 @@ lr.fit(X_train_Transformed,y_train)
 y_pred2 = lr.predict(X_test_Transformed)
 r2_score(y_test,y_pred2)
 ```
-Before and after comparsion for Box-Cox plot
+# Before and after comparsion for Box-Cox plot
 ```bash
 X_train_Transformed = pd.DataFrame(X_train_Transformed,columns=X_train.columns)
 for col in X_train_Transformed.columns:
@@ -348,7 +348,7 @@ for col in X_train_Transformed.columns:
 <img width="1160" height="393" alt="67db8f4f-325b-466d-ab7a-dc5668cd6be2" src="https://github.com/user-attachments/assets/429e8c1e-139c-4d78-83e4-4710f9290701" />
 <img width="1160" height="393" alt="3933a12f-6023-490f-adf5-eb6b8c648ce9" src="https://github.com/user-attachments/assets/94197ae7-109d-4ab9-b5ed-b6f7f0065e28" />
 
-Apply Yeo-Johnson Transform
+# Apply Yeo-Johnson Transform
 ```bash
 pt1 = PowerTransformer()
 
